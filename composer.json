@@ -1,8 +1,29 @@
 {
+    "name": "nocksapp/omnipay-nocks",
+    "type": "library",
+    "description": "Nocks driver for the Omnipay PHP payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "nocks",
+        "omnipay",
+        "pay",
+        "payment"
+    ],
+    "homepage": "https://github.com/nocksapp/checkout-omnipay",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robbie op de Weegh",
+            "email": "robbie@nocks.com"
+        }
+    ],
     "require": {
         "omnipay/common": "^2.5"
     },
     "autoload": {
         "psr-4": { "Omnipay\\Nocks\\" : "src/" }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
