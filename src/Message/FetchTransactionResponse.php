@@ -46,7 +46,7 @@ class FetchTransactionResponse extends AbstractResponse implements RedirectRespo
 	 */
 	public function isSuccessful()
 	{
-		return parent::isSuccessful();
+		return $this->data['state'] === 200;
 	}
 
 	/**
