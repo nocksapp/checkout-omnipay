@@ -96,8 +96,8 @@ class FetchTransactionResponse extends AbstractResponse implements RedirectRespo
 	 */
 	public function getPaymentReference()
 	{
-		if ( isset( $this->data['data']['uuid']['payments']['data'][0]['uuid'] ) ) {
-			return $this->data['data']['uuid']['payments']['data'][0]['uuid'];
+		if ( isset( $this->data['data']['payments']['data'][0]['uuid'] ) ) {
+			return $this->data['data']['payments']['data'][0]['uuid'];
 		}
 	}
 
