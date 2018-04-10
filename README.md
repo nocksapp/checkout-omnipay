@@ -13,7 +13,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "nocksapp/omnipay-nocks": "^1.0.0"
+        "nocksapp/omnipay-nocks": "^1.1.0"
     }
 }
 ```
@@ -31,10 +31,10 @@ $accessToken = '';
 $merchant = '';
 
 $gateway = Omnipay::create('Nocks');
-$gateway->setMerchant($merchant);
 $gateway->setAccessToken($accessToken);
 
 $response = $gateway->purchase([
+	'merchant' => $merchant,
 	'amount' => 10.00,
 	'currency' => 'NLG',
 	'sourceCurrency' => 'NLG',

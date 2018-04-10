@@ -22,27 +22,9 @@ class Gateway extends AbstractGateway {
 	 */
 	public function getDefaultParameters()
 	{
-		return array(
-			'merchant' => '',
+		return [
 			'accessToken'  => '',
-		);
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getMerchant()
-	{
-		return $this->getParameter('merchant');
-	}
-
-	/**
-	 * @param  string $value
-	 * @return $this
-	 */
-	public function setMerchant($value)
-	{
-		return $this->setParameter('merchant', $value);
+		];
 	}
 
 	/**
@@ -64,6 +46,15 @@ class Gateway extends AbstractGateway {
 
 	/**
 	 * @param  array $parameters
+	 * @return \Omnipay\Nocks\Message\FetchTransactionRequest
+	 */
+	public function fetchTransaction(array $parameters = array())
+	{
+		return $this->createRequest('\Omnipay\Nocks\Message\FetchTransactionRequest', $parameters);
+	}
+
+	/**
+	 * @param  array $parameters
 	 * @return \Omnipay\Nocks\Message\PurchaseRequest
 	 */
 	public function purchase(array $parameters = array())
@@ -73,10 +64,11 @@ class Gateway extends AbstractGateway {
 
 	/**
 	 * @param  array $parameters
+	 *
 	 * @return \Omnipay\Nocks\Message\CompletePurchaseRequest
 	 */
 	public function completePurchase(array $parameters = array())
 	{
-		return $this->createRequest('\Omnipay\Nocks\Message\CompletePurchaseRequest', $parameters);
+		return $this->createRequest( '\Omnipay\Nocks\Message\CompletePurchaseRequest', $parameters);
 	}
 }
