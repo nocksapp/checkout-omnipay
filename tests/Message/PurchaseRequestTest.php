@@ -17,7 +17,10 @@ class PurchaseRequestTest extends TestCase
 	public function setUp()
 	{
 		$this->request = new PurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
+		$this->request->setAccessToken('abc');
+
 		$this->request->initialize([
+			'merchant' => '123',
 			'amount' => '10.00',
 			'currency' => 'EUR',
 			'sourceCurrency' => 'NLG',
@@ -26,8 +29,6 @@ class PurchaseRequestTest extends TestCase
 			'metadata' => ['order_id' => 1],
 			'locale' => 'nl_NL',
 		]);
-		$this->request->setAccessToken('abc');
-		$this->request->setMerchant('123');
 	}
 
 	public function testGetData()
