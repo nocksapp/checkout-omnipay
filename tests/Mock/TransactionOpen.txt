@@ -66,9 +66,6 @@ Cache-Control: no-cache, no-store
                     "amount": {
                         "amount": "25.99",
                         "currency": "EUR"
-                    },
-                    "metadata": {
-                        "url": "https://api.nocks.com/payment/url/cf746fc8-c162-4b79-b981-6266f02f86c8"
                     }
                 }
             ]

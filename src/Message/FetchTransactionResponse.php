@@ -21,7 +21,7 @@ class FetchTransactionResponse extends AbstractResponse implements RedirectRespo
 	public function getRedirectUrl()
 	{
 		if ($this->isRedirect()) {
-			return $this->data['data']['payments']['data'][0]['metadata']['url'];
+			return 'https://nocks.com/payment/url/' . $this->getTransactionReference();
 		}
 	}
 
