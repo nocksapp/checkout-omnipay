@@ -32,14 +32,9 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 			}
 		});
 
-		$httpRequest = $this->httpClient->createRequest(
-			$method,
-			$this->endpoint . $endpoint,
-			[
-				'Authorization' => 'Bearer ' . $this->getAccessToken(),
-			],
-			json_encode($data)
-		);
+		$httpRequest = $this->httpClient->createRequest($method,$this->endpoint . $endpoint, [
+			'Authorization' => 'Bearer ' . $this->getAccessToken(),
+		], json_encode($data));
 
 		return $httpRequest->send();
 	}

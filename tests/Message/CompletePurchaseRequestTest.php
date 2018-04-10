@@ -73,5 +73,6 @@ class CompletePurchaseRequestTest extends TestCase
 		$this->assertFalse($response->isRedirect());
 		$this->assertNull($response->getTransactionReference());
 		$this->assertSame('Object does not exist', $response->getMessage());
+		$this->assertNull($response->getMetaData());
 	}
 }

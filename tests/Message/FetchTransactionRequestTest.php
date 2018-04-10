@@ -39,6 +39,7 @@ class FetchTransactionRequestTest extends TestCase
 		$this->assertFalse($response->isRedirect());
 		$this->assertSame('1', $response->getTransactionId());
 		$this->assertNull($response->getMessage());
+		$this->assertSame(['order_id' => 1], $response->getMetadata());
 	}
 
 	public function testSendExpired()

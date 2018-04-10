@@ -28,8 +28,7 @@ Cache-Control: no-cache, no-store
         "redirect_url": "https://nocks.com/redirect",
         "callback_url": "https://nocks.com/callback",
         "metadata": {
-            "your_data_example_reference": "012345",
-            "your_data_example_customer_name": "NOCKS BV"
+            "order_id": 1
         },
         "locale": "nl_NL",
         "expire": {
