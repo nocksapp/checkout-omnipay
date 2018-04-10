@@ -49,26 +49,16 @@ class PurchaseRequest extends AbstractRequest
 		return $this->setParameter('locale', $value);
 	}
 
-	public function setCallbackUrl($value)
-	{
-		return $this->setParameter('callbackUrl', $value);
-	}
-
-	public function getCallbackUrl()
-	{
-		return $this->getParameter('callbackUrl');
-	}
-
 	public function getData()
 	{
-		$this->validate('merchant', 'amount', 'currency', 'sourceCurrency', 'returnUrl', 'callbackUrl');
+		$this->validate('merchant', 'amount', 'currency', 'sourceCurrency', 'returnUrl', 'notifyUrl');
 
 		$data                       = array();
 		$data['merchant_profile']   = $this->getMerchant();
 		$data['amount']             = ['amount' => $this->getAmount(), 'currency' => $this->getCurrency()];
 		$data['source_currency']    = $this->getSourceCurrency();
 		$data['redirect_url']       = $this->getReturnUrl();
-		$data['callback_url']       = $this->getCallbackUrl();
+		$data['callback_url']       = $this->getNotifyUrl();
 		$data['metadata']           = $this->getMetadata();
 
 		if ($locale = $this->getLocale()) {

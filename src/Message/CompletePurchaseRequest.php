@@ -2,9 +2,6 @@
 
 namespace Omnipay\Nocks\Message;
 
-
-use Omnipay\Common\Exception\InvalidRequestException;
-
 /**
  * Nocks Complete Purchase Request
  *
@@ -14,16 +11,10 @@ class CompletePurchaseRequest extends FetchTransactionRequest
 {
 	public function getData()
 	{
-		$this->validate('accessToken');
+		$this->validate('accessToken', 'transactionId');
 
-		$transactionReference = $this->getTransactionReference();
-
-		if (!$transactionReference) {
-			throw new InvalidRequestException("The transactionReference parameter is required");
-		}
-
-		$data = array();
-		$data['id'] = $transactionReference;
+		$data = [];
+		$data['id'] = $this->getTransactionId();
 
 		return $data;
 	}

@@ -1,0 +1,91 @@
+HTTP/1.1 201 OK
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, HEAD, OPTIONS, DELETE
+Access-Control-Max-Age: 300
+Cache-Control: no-cache, no-store
+
+{
+    "data": {
+        "uuid": "1",
+        "status": "pending",
+        "source_amount": {
+            "amount": "25.99000000",
+            "currency": "EUR"
+        },
+        "target_amount": {
+            "amount": "245.09499759",
+            "currency": "NLG"
+        },
+        "received_amount": {
+            "amount": "0.00000000",
+            "currency": "EUR"
+        },
+        "target_address": "TF7LzGAcCxYxoFjfJwxswua24s9wsMpwY8",
+        "refund_address": "NL16ABNA0602167736",
+        "description": "",
+        "redirect_url": "https://nocks.com/redirect",
+        "callback_url": "https://nocks.com/callback",
+        "metadata": {
+            "your_data_example_reference": "012345",
+            "your_data_example_customer_name": "NOCKS BV"
+        },
+        "locale": "nl_NL",
+        "expire": {
+            "datetime": "2017-06-28 11:34:27",
+            "timestamp": 1498649667
+        },
+        "merchant_profile": null,
+        "merchant_clearing": null,
+        "created_at": {
+            "datetime": "2017-06-28 11:04:27",
+            "timestamp": 1498647867
+        },
+        "updated_at": {
+            "datetime": "2017-06-28 11:04:28",
+            "timestamp": 1498647868
+        },
+        "resource": "transaction",
+        "payments": {
+            "data": [
+                {
+                    "uuid": "cf746fc8-c162-4b79-b981-6266f02f86c8",
+                    "status": "pending",
+                    "type": "transaction-source",
+                    "method_type": "redirect",
+                    "description": "cf746fc8 Transaction",
+                    "created_at": {
+                        "datetime": "2017-06-28 11:04:27",
+                        "timestamp": 1498647867
+                    },
+                    "updated_at": {
+                        "datetime": "2017-06-28 11:04:28",
+                        "timestamp": 1498647868
+                    },
+                    "resource": "payment",
+                    "amount": {
+                        "amount": "25.99",
+                        "currency": "EUR"
+                    },
+                    "metadata": {
+                        "url": "https://api.nocks.com/payment/url/cf746fc8-c162-4b79-b981-6266f02f86c8"
+                    }
+                }
+            ]
+        },
+        "status_transitions": {
+            "data": [
+                {
+                    "status": "open",
+                    "created_at": {
+                        "datetime": "2017-10-11 15:34:06",
+                        "timestamp": 1507728846
+                    },
+                    "resource": "transaction-status-transition"
+                }
+            ]
+        }
+    },
+    "status": 200
+}

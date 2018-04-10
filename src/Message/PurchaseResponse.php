@@ -6,6 +6,15 @@ namespace Omnipay\Nocks\Message;
 class PurchaseResponse extends FetchTransactionResponse
 {
 	/**
+	 * {@inheritdoc}
+	 */
+	public function isRedirect()
+	{
+		// On a successful call it's always a redirect
+		return parent::isSuccessful();
+	}
+
+	/**
 	 * When you do a `purchase` the request is never successful because
 	 * you need to redirect off-site to complete the purchase.
 	 *
@@ -14,21 +23,5 @@ class PurchaseResponse extends FetchTransactionResponse
 	public function isSuccessful()
 	{
 		return false;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 */
-	public function isRedirect()
-	{
-		return true;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 */
-	public function getRedirectUrl()
-	{
-		return 'https://nocks.com/payment/url/' . $this->getPaymentReference();
 	}
 }
