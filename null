@@ -1,7 +1,0 @@
-{
-    "status": 404,
-    "error": {
-        "code": 404,
-        "message": "Object does not exist"
-    }
-}
