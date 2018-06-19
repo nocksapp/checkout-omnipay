@@ -24,6 +24,7 @@ class Gateway extends AbstractGateway {
 	{
 		return [
 			'accessToken'  => '',
+			'testMode' => false,
 		];
 	}
 

@@ -8,6 +8,7 @@ use Guzzle\Common\Event;
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
 	protected $endpoint = 'https://api.nocks.com/api/v2';
+	protected $sandboxEndpoint = 'https://sandbox.nocks.com/api/v2';
 
 	public function getAccessToken()
 	{
@@ -32,9 +33,14 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 			}
 		});
 
-		$httpRequest = $this->httpClient->createRequest($method,$this->endpoint . $endpoint, [
-			'Authorization' => 'Bearer ' . $this->getAccessToken(),
-		], json_encode($data));
+		$httpRequest = $this->httpClient->createRequest(
+			$method,
+			($this->getTestMode() ? $this->sandboxEndpoint : $this->endpoint) . $endpoint,
+			[
+				'Authorization' => 'Bearer ' . $this->getAccessToken(),
+			],
+			json_encode($data)
+		);
 
 		return $httpRequest->send();
 	}
