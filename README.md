@@ -13,7 +13,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "nocksapp/omnipay-nocks": "^1.1.0"
+        "nocksapp/omnipay-nocks": "^1.1.1"
     }
 }
 ```
@@ -32,6 +32,7 @@ $merchant = '';
 
 $gateway = Omnipay::create('Nocks');
 $gateway->setAccessToken($accessToken);
+$gateway->setTestMode(true); // Use Nocks testmode/sandbox for testing
 
 $response = $gateway->purchase([
 	'merchant' => $merchant,
