@@ -37,6 +37,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 			$method,
 			($this->getTestMode() ? $this->sandboxEndpoint : $this->endpoint) . $endpoint,
 			[
+				'Accept' => 'application/json',
 				'Authorization' => 'Bearer ' . $this->getAccessToken(),
 			],
 			json_encode($data)
