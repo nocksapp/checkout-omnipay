@@ -13,7 +13,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "nocksapp/omnipay-nocks": "^1.1.1"
+        "nocksapp/omnipay-nocks": "^1.1.2"
     }
 }
 ```
