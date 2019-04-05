@@ -13,7 +13,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "nocksapp/omnipay-nocks": "^1.1.2"
+        "nocksapp/omnipay-nocks": "^1.2.0"
     }
 }
 ```
@@ -38,9 +38,11 @@ $response = $gateway->purchase([
 	'merchant' => $merchant,
 	'amount' => 10.00,
 	'currency' => 'NLG',
-	'sourceCurrency' => 'NLG',
+	'sourceCurrency' => 'EUR',
 	'returnUrl' => 'http://example.com/return',
 	'callbackUrl' => 'http://example.com/callback',
+	'paymentMethod' => 'ideal',
+	'issuer' => 'ABNANL2A',
 ])->send();
 
 if ($response->isRedirect()) {
