@@ -4,8 +4,6 @@ namespace Omnipay\Nocks\Message;
 
 /**
  * Nocks Purchase Request
- *
- * @method \Omnipay\Nocks\Message\PurchaseResponse send()
  */
 class PurchaseRequest extends AbstractRequest
 {
@@ -60,6 +58,18 @@ class PurchaseRequest extends AbstractRequest
 		$data['redirect_url']       = $this->getReturnUrl();
 		$data['callback_url']       = $this->getNotifyUrl();
 		$data['metadata']           = $this->getMetadata();
+
+		if ($method = $this->getPaymentMethod()) {
+			$paymentMethodMetadata = [];
+			if ($issuer = $this->getIssuer()) {
+				$paymentMethodMetadata['issuer'] = $issuer;
+			}
+
+			$data['payment_method'] = [
+				'method' => $method,
+				'metadata' => $paymentMethodMetadata,
+			];
+		}
 
 		if ($locale = $this->getLocale()) {
 			$data['locale'] = $locale;

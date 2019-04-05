@@ -37,7 +37,7 @@ class FetchTransactionRequestTest extends TestCase
 		$this->assertFalse($response->isPaid());
 		$this->assertFalse($response->isCancelled());
 		$this->assertFalse($response->isRedirect());
-		$this->assertSame('1', $response->getTransactionId());
+		$this->assertSame('b12ab8ea-a7ef-44ec-9e0d-a2eddf90387a', $response->getTransactionId());
 		$this->assertNull($response->getMessage());
 		$this->assertSame(['order_id' => 1], $response->getMetadata());
 	}

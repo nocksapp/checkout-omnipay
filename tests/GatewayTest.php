@@ -27,6 +27,8 @@ class GatewayTest extends GatewayTestCase
 			'amount' => '10.00',
 			'currency' => 'EUR',
 			'sourceCurrency' => 'NLG',
+			'paymentMethod' => 'ideal',
+			'issuer' => 'ABNA',
 			'returnUrl' => 'http://www.example.com/return',
 			'notifyUrl' => 'http://www.example.com/callback',
 			'metadata' => ['order_id' => 1],
@@ -38,6 +40,8 @@ class GatewayTest extends GatewayTestCase
 		$this->assertSame('123', $request->getMerchant());
 		$this->assertSame('EUR', $request->getCurrency());
 		$this->assertSame('NLG', $request->getSourceCurrency());
+		$this->assertSame('ideal', $request->getPaymentMethod());
+		$this->assertSame('ABNA', $request->getIssuer());
 
 		$this->assertSame(['order_id' => 1], $request->getMetadata());
 		$this->assertSame('nl_NL', $request->getLocale());

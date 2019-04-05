@@ -47,6 +47,15 @@ class Gateway extends AbstractGateway {
 
 	/**
 	 * @param  array $parameters
+	 * @return \Omnipay\Nocks\Message\FetchIssuersRequest
+	 */
+	public function fetchIssuers(array $parameters = [])
+	{
+		return $this->createRequest('\Omnipay\Nocks\Message\FetchIssuersRequest', $parameters);
+	}
+
+	/**
+	 * @param  array $parameters
 	 * @return \Omnipay\Nocks\Message\FetchTransactionRequest
 	 */
 	public function fetchTransaction(array $parameters = array())
