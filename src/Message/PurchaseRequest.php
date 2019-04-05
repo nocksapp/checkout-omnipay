@@ -4,8 +4,6 @@ namespace Omnipay\Nocks\Message;
 
 /**
  * Nocks Purchase Request
- *
- * @method \Omnipay\Nocks\Message\PurchaseResponse send()
  */
 class PurchaseRequest extends AbstractRequest
 {
@@ -51,15 +49,30 @@ class PurchaseRequest extends AbstractRequest
 
 	public function getData()
 	{
-		$this->validate('merchant', 'amount', 'currency', 'sourceCurrency', 'returnUrl', 'notifyUrl');
+		$this->validate('merchant', 'amount', 'currency', 'returnUrl', 'notifyUrl');
 
 		$data                       = array();
 		$data['merchant_profile']   = $this->getMerchant();
 		$data['amount']             = ['amount' => $this->getAmount(), 'currency' => $this->getCurrency()];
-		$data['source_currency']    = $this->getSourceCurrency();
 		$data['redirect_url']       = $this->getReturnUrl();
 		$data['callback_url']       = $this->getNotifyUrl();
 		$data['metadata']           = $this->getMetadata();
+
+		if ($sourceCurrency = $this->getSourceCurrency()) {
+			$data['source_currency'] = $sourceCurrency;
+		}
+
+		if ($method = $this->getPaymentMethod()) {
+			$paymentMethodMetadata = [];
+			if ($issuer = $this->getIssuer()) {
+				$paymentMethodMetadata['issuer'] = $issuer;
+			}
+
+			$data['payment_method'] = [
+				'method' => $method,
+				'metadata' => $paymentMethodMetadata,
+			];
+		}
 
 		if ($locale = $this->getLocale()) {
 			$data['locale'] = $locale;

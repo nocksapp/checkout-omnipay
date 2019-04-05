@@ -8,64 +8,112 @@ Cache-Control: no-cache, no-store
 
 {
     "data": {
-        "uuid": "1",
-        "status": "pending",
-        "source_amount": {
-            "amount": "25.99000000",
+        "uuid": "b12ab8ea-a7ef-44ec-9e0d-a2eddf90387a",
+        "payment_url": "https://sandbox.nocks.com/transaction/b12ab8ea-a7ef-44ec-9e0d-a2eddf90387a",
+        "status": "open",
+        "amount": {
+            "amount": "2.00",
             "currency": "EUR"
         },
+        "source_amount": {
+            "amount": "66.6667",
+            "currency": "NLG"
+        },
         "target_amount": {
-            "amount": "245.09499759",
+            "amount": "64.2467",
             "currency": "NLG"
         },
         "received_amount": {
-            "amount": "0.00000000",
+            "amount": "0.00",
             "currency": "EUR"
         },
-        "target_address": "TF7LzGAcCxYxoFjfJwxswua24s9wsMpwY8",
-        "refund_address": "NL16ABNA0602167736",
+        "tip_amount": null,
+        "target_address": "",
+        "refund_address": "",
         "description": "",
-        "redirect_url": "https://nocks.com/redirect",
-        "callback_url": "https://nocks.com/callback",
+        "redirect_url": "",
+        "callback_url": "",
         "metadata": {
             "order_id": 1
         },
-        "locale": "nl_NL",
-        "expire": {
-            "datetime": "2017-06-28 11:34:27",
-            "timestamp": 1498649667
+        "locale": "en",
+        "expire_at": {
+            "datetime": "2019-04-04 13:18:15",
+            "timestamp": 1554376695
         },
-        "merchant_profile": null,
+        "extendable_expiration": true,
+        "merchant_profile": "c2ef4a6d-5ac4-4229-901c-1b9cbfcf754a",
         "merchant_clearing": null,
+        "merchant_reference": null,
+        "bill": null,
         "created_at": {
-            "datetime": "2017-06-28 11:04:27",
-            "timestamp": 1498647867
+            "datetime": "2019-04-04 12:48:15",
+            "timestamp": 1554374895
         },
         "updated_at": {
-            "datetime": "2017-06-28 11:04:28",
-            "timestamp": 1498647868
+            "datetime": "2019-04-04 12:48:15",
+            "timestamp": 1554374895
         },
         "resource": "transaction",
         "payments": {
             "data": [
                 {
-                    "uuid": "cf746fc8-c162-4b79-b981-6266f02f86c8",
-                    "status": "pending",
+                    "uuid": "779ca616-2cd4-42bb-be29-3e6d72d2ce42",
+                    "status": "open",
                     "type": "transaction-source",
-                    "method_type": "redirect",
-                    "description": "cf746fc8 Transaction",
+                    "method_type": "deposit",
+                    "description": "779ca616 Gulden",
+                    "metadata": {
+                        "type": "deposit",
+                        "data": {
+                            "address": "TT5CzjmkqUKwBuH8a62t1QLWjoXjDShG8v"
+                        },
+                        "url": "https://sandbox.nocks.com/payment/url/779ca616-2cd4-42bb-be29-3e6d72d2ce42",
+                        "address": "TT5CzjmkqUKwBuH8a62t1QLWjoXjDShG8v",
+                        "uri_schema": "gulden:TT5CzjmkqUKwBuH8a62t1QLWjoXjDShG8v?amount=66.6667",
+                        "transaction_reference": null,
+                        "qr_code": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAADNCAIAAACU3mM+AAAABnRSTlMA/wD/AP83WBt9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEm0lEQVR4nO3d247rKBRF0U7r/P8v13m31JYQMCHVYzxXsJNaQhuby+fn5+cf2Ozf0zfA/4KcUZAzCnJGQc4oyBkFOaMgZxTkjIKcUZAzCnJGQc4oyBkFOaMgZxTkjIKcUZAzCn9mPvz5fFbdx7vHIob36y5c8ZB9wSFDv8a+6w7Rn1GQMwpyRkHOKEyNAx6yAnzf2uah6+67yUfLQ03dOQzSn1GQMwpyRkHOKKwcBzwMVZFD1etQmbzvcfn7sGBhLT/T1L7/whD9GQU5oyBnFOSMwsZxQGaoTF74mH6m5aGmfsHervozCnJGQc4oyBmF3zAOeBh6Ar5vDPHe8tAUo5n3AZfQn1GQMwpyRkHOKGwcB+wrV2emzbz/8b4ZR6em/F8yaNCfUZAzCnJGQc4orBwHZBvXLKzls+vO/DiXrIeYoT+jIGcU5IyCnFH4XPK8eMa+8nxhxT3zluIX0J9RkDMKckZBzigcOz8gm71zah/NoXueGXDsG6wsHJ3ozyjIGQU5oyBnFI6tD5hZRruwXM0K8H2bfS5ckLyP/oyCnFGQMwpyRmFqXtC+iTHvn81WAAzdxtAff8X0pKHPvtOfUZAzCnJGQc4oTL0PGCoqTx1odeocsYVm5hQNNfWw8L+gP6MgZxTkjIKcUdi4X9BMfbpwK9CHbPugoc8+LFw8MdTyPvozCnJGQc4oyBmFleuEZwrShVvkX7Ktf7bZ56lFDEP0ZxTkjIKcUZAzCrecH7Bv0LBvyfGpIwFmpmN5H8BvJmcU5IyCnFFYOQ7YNzFm31yXU2cR77uNSzYIetCfUZAzCnJGQc4obNw3dF9dnM38mZF9/YVfcN9vpT+jIGcU5IyCnFE4Ni9o3+Py9wstfA8xdN0Z2T2/X9e+odxOzijIGQU5o7Dy/IBLTu4daipbRnvJ25FTy4b1ZxTkjIKcUZAzChvnBT3sm1z/buHj8uyws29czPxOf0ZBzijIGQU5ozD1PuDZVvUQf5+sWj91BsCp1RL6MwpyRkHOKMgZhZXzgh6y7fUXltjvLb/f1SXHCZxq+Z3+jIKcUZAzCnJGYWpe0MKSc6Y8zwr/d/sq/YXbJS1seYj+jIKcUZAzCnJGoZsXdOrZ+ox9Ly0Wyl5LeB/A7eSMgpxRkDMKv2G/oIeFZ4EtdOfxXu/sF8SXkTMKckZBzihsnBe0r+Vsrv3DJbV8dvTCQvozCnJGQc4oyBmFqXFAVgg/qtdsUfFQy+/2bR90SaX/Tn9GQc4oyBkFOaOw8vyAU/OCFk4iGqqpF55U/BVrm2fozyjIGQU5oyBnFDaeI5YVs0NNZQeWDcnGPafozyjIGQU5oyBnFLrzhBfKNsG/pDy/5Cxi+wVxOzmjIGcU5IzCV44DFtp3bsGMR8szs5WGLjS0DmOI/oyCnFGQMwpyRmHjOODUgtV9+/ifWhc9tE54qOV33gfwZeSMgpxRkDMKK8cBl+yjecn+OTO3MbOKeOHmpt4H8GXkjIKcUZAzCivPE4b/oj+jIGcU5IyCnFGQMwpyRkHOKMgZBTmjIGcU5IyCnFGQMwpyRkHOKMgZBTmjIGcU5IzCXwk8yLduD+2rAAAAAElFTkSuQmCC"
+                    },
                     "created_at": {
-                        "datetime": "2017-06-28 11:04:27",
-                        "timestamp": 1498647867
+                        "datetime": "2019-04-04 12:48:15",
+                        "timestamp": 1554374895
                     },
                     "updated_at": {
-                        "datetime": "2017-06-28 11:04:28",
-                        "timestamp": 1498647868
+                        "datetime": "2019-04-04 12:48:15",
+                        "timestamp": 1554374895
                     },
                     "resource": "payment",
+                    "payable": {
+                        "uuid": "b12ab8ea-a7ef-44ec-9e0d-a2eddf90387a",
+                        "resource": "transaction"
+                    },
                     "amount": {
-                        "amount": "25.99",
-                        "currency": "EUR"
+                        "amount": "66.6667",
+                        "currency": "NLG"
+                    },
+                    "amount_refunded": {
+                        "amount": "0.0000",
+                        "currency": "NLG"
+                    },
+                    "payment_method": {
+                        "data": {
+                            "code": "gulden",
+                            "name": "Gulden",
+                            "description": "",
+                            "amount_minimum": true,
+                            "amount_maximum": false,
+                            "fee_fixed": 0,
+                            "fee_percentage": 0,
+                            "is_verification_method": false,
+                            "is_transaction_method": true,
+                            "is_deposit_method": true,
+                            "is_withdrawal_method": true,
+                            "is_refund_method": true,
+                            "is_default": false,
+                            "metadata": [],
+                            "expiration_time": "1800",
+                            "resource": "payment-method"
+                        }
                     }
                 }
             ]
@@ -75,13 +123,45 @@ Cache-Control: no-cache, no-store
                 {
                     "status": "open",
                     "created_at": {
-                        "datetime": "2017-10-11 15:34:06",
-                        "timestamp": 1507728846
+                        "datetime": "2019-04-04 12:48:15",
+                        "timestamp": 1554374895
                     },
                     "resource": "transaction-status-transition"
                 }
             ]
+        },
+        "payment_method": {
+            "data": {
+                "code": "gulden",
+                "name": "Gulden",
+                "description": "",
+                "amount_minimum": true,
+                "amount_maximum": false,
+                "fee_fixed": 0,
+                "fee_percentage": 0,
+                "is_verification_method": false,
+                "is_transaction_method": true,
+                "is_deposit_method": true,
+                "is_withdrawal_method": true,
+                "is_refund_method": true,
+                "is_default": false,
+                "metadata": [],
+                "expiration_time": "1800",
+                "resource": "payment-method"
+            }
+        },
+        "clearing_distribution": {
+            "data": [
+                {
+                    "percentage": 80,
+                    "currency": "EUR"
+                },
+                {
+                    "percentage": 20,
+                    "currency": "NLG"
+                }
+            ]
         }
     },
-    "status": 200
+    "status": 201
 }

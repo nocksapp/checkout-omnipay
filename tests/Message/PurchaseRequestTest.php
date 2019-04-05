@@ -54,9 +54,9 @@ class PurchaseRequestTest extends TestCase
 		$this->assertFalse($response->isSuccessful());
 		$this->assertTrue($response->isRedirect());
 		$this->assertSame('GET', $response->getRedirectMethod());
-		$this->assertSame('https://nocks.com/payment/url/cf746fc8-c162-4b79-b981-6266f02f86c8', $response->getRedirectUrl());
+		$this->assertSame('https://sandbox.nocks.com/payment/url/779ca616-2cd4-42bb-be29-3e6d72d2ce42', $response->getRedirectUrl());
 		$this->assertNull($response->getRedirectData());
-		$this->assertSame('cf746fc8-c162-4b79-b981-6266f02f86c8', $response->getTransactionReference());
+		$this->assertSame('779ca616-2cd4-42bb-be29-3e6d72d2ce42', $response->getTransactionReference());
 		$this->assertTrue($response->isOpen());
 		$this->assertFalse($response->isPaid());
 		$this->assertNull($response->getMessage());

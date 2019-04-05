@@ -1,0 +1,164 @@
+HTTP/1.1 201 OK
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, HEAD, OPTIONS, DELETE
+Access-Control-Max-Age: 300
+Cache-Control: no-cache, no-store
+
+{
+    "currencies": {
+        "EUR": {
+            "code": "EUR",
+            "name": "Euro",
+            "decimalisation": 2,
+            "estimated_transaction_target_delay": 0
+        },
+        "NLG": {
+            "code": "NLG",
+            "name": "Gulden",
+            "decimalisation": 4,
+            "estimated_transaction_target_delay": 0
+        },
+        "BTC": {
+            "code": "BTC",
+            "name": "Bitcoin",
+            "decimalisation": 8,
+            "estimated_transaction_target_delay": 0
+        }
+    },
+    "payment_methods": {
+        "gulden": {
+            "code": "gulden",
+            "name": "Gulden",
+            "description": "",
+            "amount_minimum": true,
+            "amount_maximum": false,
+            "fee_fixed": 0,
+            "fee_percentage": 0,
+            "is_verification_method": false,
+            "is_transaction_method": true,
+            "is_deposit_method": true,
+            "is_withdrawal_method": true,
+            "is_refund_method": true,
+            "is_default": false,
+            "metadata": [],
+            "expiration_time": "1800",
+            "resource": "payment-method"
+        },
+        "bitcoin": {
+            "code": "bitcoin",
+            "name": "Bitcoin",
+            "description": "",
+            "amount_minimum": false,
+            "amount_maximum": false,
+            "fee_fixed": 0,
+            "fee_percentage": 0,
+            "is_verification_method": false,
+            "is_transaction_method": false,
+            "is_deposit_method": true,
+            "is_withdrawal_method": true,
+            "is_refund_method": true,
+            "is_default": false,
+            "metadata": [],
+            "expiration_time": "1800",
+            "resource": "payment-method"
+        },
+        "ideal": {
+            "code": "ideal",
+            "name": "iDEAL",
+            "description": "The Netherlands",
+            "amount_minimum": true,
+            "amount_maximum": false,
+            "fee_fixed": 0,
+            "fee_percentage": 0,
+            "is_verification_method": true,
+            "is_transaction_method": true,
+            "is_deposit_method": false,
+            "is_withdrawal_method": true,
+            "is_refund_method": true,
+            "is_default": false,
+            "metadata": {
+                "issuers": {
+                    "INGBNL2A": "Issuer Simulation V3 - ING",
+                    "RABONL2U": "Issuer Simulation V3 - RABO"
+                }
+            },
+            "expiration_time": "1800",
+            "resource": "payment-method"
+        },
+        "sepa": {
+            "code": "sepa",
+            "name": "Wiretransfer / SEPA",
+            "description": "Europe",
+            "amount_minimum": true,
+            "amount_maximum": false,
+            "fee_fixed": 0,
+            "fee_percentage": 0,
+            "is_verification_method": true,
+            "is_transaction_method": true,
+            "is_deposit_method": true,
+            "is_withdrawal_method": true,
+            "is_refund_method": true,
+            "is_default": false,
+            "metadata": [],
+            "expiration_time": "604800",
+            "resource": "payment-method"
+        },
+        "bancontact": {
+            "code": "bancontact",
+            "name": "Bancontact",
+            "description": "Belgium",
+            "amount_minimum": true,
+            "amount_maximum": false,
+            "fee_fixed": 0,
+            "fee_percentage": 0,
+            "is_verification_method": true,
+            "is_transaction_method": true,
+            "is_deposit_method": false,
+            "is_withdrawal_method": true,
+            "is_refund_method": true,
+            "is_default": false,
+            "metadata": [],
+            "expiration_time": "1800",
+            "resource": "payment-method"
+        },
+        "giropay": {
+            "code": "giropay",
+            "name": "Giropay",
+            "description": "Germany",
+            "amount_minimum": true,
+            "amount_maximum": false,
+            "fee_fixed": 0,
+            "fee_percentage": 0,
+            "is_verification_method": true,
+            "is_transaction_method": true,
+            "is_deposit_method": false,
+            "is_withdrawal_method": true,
+            "is_refund_method": true,
+            "is_default": false,
+            "metadata": [],
+            "expiration_time": "1800",
+            "resource": "payment-method"
+        },
+        "balance": {
+            "code": "balance",
+            "name": "Nocks balance",
+            "description": "",
+            "amount_minimum": true,
+            "amount_maximum": false,
+            "fee_fixed": 0,
+            "fee_percentage": 0,
+            "is_verification_method": false,
+            "is_transaction_method": true,
+            "is_deposit_method": false,
+            "is_withdrawal_method": false,
+            "is_refund_method": false,
+            "is_default": false,
+            "metadata": [],
+            "expiration_time": "",
+            "resource": "payment-method"
+        }
+    },
+    "status": 200
+}
