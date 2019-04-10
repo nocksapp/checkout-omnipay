@@ -24,7 +24,7 @@ Cache-Control: no-cache, no-store
         },
         "target_address": "TF7LzGAcCxYxoFjfJwxswua24s9wsMpwY8",
         "refund_address": "NL16ABNA0602167736",
-        "description": "",
+        "description": "Transaction description",
         "redirect_url": "https://nocks.com/redirect",
         "callback_url": "https://nocks.com/callback",
         "metadata": {

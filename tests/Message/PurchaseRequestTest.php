@@ -27,6 +27,7 @@ class PurchaseRequestTest extends TestCase
 			'returnUrl' => 'http://www.example.com/return',
 			'notifyUrl' => 'http://www.example.com/callback',
 			'metadata' => ['order_id' => 1],
+			'description' => 'Transaction description',
 			'locale' => 'nl_NL',
 		]);
 	}
@@ -41,8 +42,9 @@ class PurchaseRequestTest extends TestCase
 		$this->assertSame('http://www.example.com/return', $data['redirect_url']);
 		$this->assertSame('http://www.example.com/callback', $data['callback_url']);
 		$this->assertSame(['order_id' => 1], $data['metadata']);
+		$this->assertSame('Transaction description', $data['description']);
 		$this->assertSame('nl_NL', $data['locale']);
-		$this->assertCount(7, $data);
+		$this->assertCount(8, $data);
 	}
 
 	public function testSendSuccess()
