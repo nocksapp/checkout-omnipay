@@ -30,7 +30,7 @@ Cache-Control: no-cache, no-store
         "tip_amount": null,
         "target_address": "",
         "refund_address": "",
-        "description": "",
+        "description": "Transaction description",
         "redirect_url": "",
         "callback_url": "",
         "metadata": {

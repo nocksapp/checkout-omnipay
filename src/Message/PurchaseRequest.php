@@ -57,6 +57,7 @@ class PurchaseRequest extends AbstractRequest
 		$data['redirect_url']       = $this->getReturnUrl();
 		$data['callback_url']       = $this->getNotifyUrl();
 		$data['metadata']           = $this->getMetadata();
+		$data['description']        = $this->getDescription();
 
 		if ($sourceCurrency = $this->getSourceCurrency()) {
 			$data['source_currency'] = $sourceCurrency;
