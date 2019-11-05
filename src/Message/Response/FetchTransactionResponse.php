@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\Nocks\Message;
+namespace Omnipay\Nocks\Message\Response;
 
-use Omnipay\Common\Message\RedirectResponseInterface;
 use Omnipay\Common\Message\AbstractResponse;
+use Omnipay\Common\Message\RedirectResponseInterface;
 
 class FetchTransactionResponse extends AbstractResponse implements RedirectResponseInterface
 {
@@ -82,41 +82,49 @@ class FetchTransactionResponse extends AbstractResponse implements RedirectRespo
 	}
 
 	/**
-	 * @return mixed
+	 * @return string|null
 	 */
 	public function getTransactionId() {
 		if (isset($this->data['data']['uuid'])) {
 			return $this->data['data']['uuid'];
 		}
+
+		return null;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string|null
 	 */
 	public function getTransactionReference()
 	{
 		if (isset($this->data['data']['payments']['data'][0]['uuid'])) {
 			return $this->data['data']['payments']['data'][0]['uuid'];
 		}
+
+		return null;
 	}
 
 	/**
-	 * @return mixed
+	 * @return array|null
 	 */
 	public function getMetadata()
 	{
 		if (isset($this->data['data']['metadata'])) {
 			return $this->data['data']['metadata'];
 		}
+
+		return null;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string|null
 	 */
 	public function getMessage()
 	{
 		if (isset($this->data['error'])) {
 			return $this->data['error']['message'];
 		}
+
+		return null;
 	}
 }

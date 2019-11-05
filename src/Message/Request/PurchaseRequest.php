@@ -1,11 +1,12 @@
 <?php
 
-namespace Omnipay\Nocks\Message;
+namespace Omnipay\Nocks\Message\Request;
 
-/**
- * Nocks Purchase Request
- */
-class PurchaseRequest extends AbstractRequest
+use Omnipay\Common\Exception\InvalidRequestException;
+use Omnipay\Common\Message\ResponseInterface;
+use Omnipay\Nocks\Message\Response\PurchaseResponse;
+
+class PurchaseRequest extends AbstractNocksRequest
 {
 	public function getMerchant()
 	{
@@ -47,6 +48,10 @@ class PurchaseRequest extends AbstractRequest
 		return $this->setParameter('locale', $value);
 	}
 
+	/**
+	 * @return array
+	 * @throws InvalidRequestException
+	 */
 	public function getData()
 	{
 		$this->validate('merchant', 'amount', 'currency', 'returnUrl', 'notifyUrl');
@@ -82,10 +87,13 @@ class PurchaseRequest extends AbstractRequest
 		return $data;
 	}
 
+	/**
+	 * @param array $data
+	 * @return ResponseInterface|PurchaseResponse
+	 */
 	public function sendData($data)
 	{
 		$response = $this->sendRequest('POST', '/transaction', $data);
-
-		return $this->response = new PurchaseResponse($this, $response->json());
+		return $this->response = new PurchaseResponse($this, $response);
 	}
 }

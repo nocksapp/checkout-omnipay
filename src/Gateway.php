@@ -1,13 +1,27 @@
 <?php
 
-
 namespace Omnipay\Nocks;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Common\Message\RequestInterface;
+use Omnipay\Nocks\Message\Request\CompletePurchaseRequest;
+use Omnipay\Nocks\Message\Request\FetchIssuersRequest;
+use Omnipay\Nocks\Message\Request\FetchTransactionRequest;
+use Omnipay\Nocks\Message\Request\PurchaseRequest;
 
 
-class Gateway extends AbstractGateway {
-
+/**
+ * @method RequestInterface authorize( array $options = array() )
+ * @method RequestInterface completeAuthorize( array $options = array() )
+ * @method RequestInterface capture( array $options = array() )
+ * @method RequestInterface refund( array $options = array() )
+ * @method RequestInterface void( array $options = array() )
+ * @method RequestInterface createCard( array $options = array() )
+ * @method RequestInterface updateCard( array $options = array() )
+ * @method RequestInterface deleteCard( array $options = array() )
+ */
+class Gateway extends AbstractGateway
+{
 	/**
 	 * Get gateway display name
 	 *
@@ -47,38 +61,45 @@ class Gateway extends AbstractGateway {
 
 	/**
 	 * @param  array $parameters
-	 * @return \Omnipay\Nocks\Message\FetchIssuersRequest
+	 * @return FetchIssuersRequest
 	 */
 	public function fetchIssuers(array $parameters = [])
 	{
-		return $this->createRequest('\Omnipay\Nocks\Message\FetchIssuersRequest', $parameters);
+		/** @var FetchIssuersRequest $request */
+		$request = $this->createRequest(FetchIssuersRequest::class, $parameters);
+		return $request;
 	}
 
 	/**
 	 * @param  array $parameters
-	 * @return \Omnipay\Nocks\Message\FetchTransactionRequest
+	 * @return FetchTransactionRequest
 	 */
-	public function fetchTransaction(array $parameters = array())
+	public function fetchTransaction(array $parameters = [])
 	{
-		return $this->createRequest('\Omnipay\Nocks\Message\FetchTransactionRequest', $parameters);
+		/** @var FetchTransactionRequest $request */
+		$request = $this->createRequest(FetchTransactionRequest::class, $parameters);
+		return $request;
 	}
 
 	/**
 	 * @param  array $parameters
-	 * @return \Omnipay\Nocks\Message\PurchaseRequest
+	 * @return PurchaseRequest
 	 */
-	public function purchase(array $parameters = array())
+	public function purchase(array $parameters = [])
 	{
-		return $this->createRequest('\Omnipay\Nocks\Message\PurchaseRequest', $parameters);
+		/** @var PurchaseRequest $request */
+		$request = $this->createRequest(PurchaseRequest::class, $parameters);
+		return $request;
 	}
 
 	/**
 	 * @param  array $parameters
-	 *
-	 * @return \Omnipay\Nocks\Message\CompletePurchaseRequest
+	 * @return CompletePurchaseRequest
 	 */
-	public function completePurchase(array $parameters = array())
+	public function completePurchase(array $parameters = [])
 	{
-		return $this->createRequest( '\Omnipay\Nocks\Message\CompletePurchaseRequest', $parameters);
+		/** @var CompletePurchaseRequest $request */
+		$request = $this->createRequest(CompletePurchaseRequest::class, $parameters);
+		return $request;
 	}
 }

@@ -1,7 +1,6 @@
 <?php
 
-namespace Omnipay\Nocks\Message;
-
+namespace Omnipay\Nocks\Message\Response;
 
 class PurchaseResponse extends FetchTransactionResponse
 {

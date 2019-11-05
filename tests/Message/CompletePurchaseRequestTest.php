@@ -2,13 +2,13 @@
 
 namespace Omnipay\Nocks\Message;
 
-
+use Omnipay\Nocks\Message\Request\CompletePurchaseRequest;
 use Omnipay\Tests\TestCase;
 
 class CompletePurchaseRequestTest extends TestCase
 {
 	/**
-	 * @var \Omnipay\Nocks\Message\CompletePurchaseRequestTest
+	 * @var CompletePurchaseRequest
 	 */
 	protected $request;
 
@@ -41,7 +41,7 @@ class CompletePurchaseRequestTest extends TestCase
 	{
 		$this->setMockHttpResponse('TransactionPaid.txt');
 		$response = $this->request->send();
-		$this->assertInstanceOf('Omnipay\Nocks\Message\CompletePurchaseResponse', $response);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Response\CompletePurchaseResponse', $response);
 		$this->assertTrue($response->isSuccessful());
 		$this->assertFalse($response->isOpen());
 		$this->assertTrue($response->isPaid());
@@ -54,7 +54,7 @@ class CompletePurchaseRequestTest extends TestCase
 	{
 		$this->setMockHttpResponse('TransactionExpired.txt');
 		$response = $this->request->send();
-		$this->assertInstanceOf('Omnipay\Nocks\Message\CompletePurchaseResponse', $response);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Response\CompletePurchaseResponse', $response);
 		$this->assertFalse($response->isSuccessful());
 		$this->assertFalse($response->isPaid());
 		$this->assertTrue($response->isExpired());
@@ -68,7 +68,7 @@ class CompletePurchaseRequestTest extends TestCase
 		$this->setMockHttpResponse('TransactionFailure.txt');
 		$response = $this->request->send();
 
-		$this->assertInstanceOf('Omnipay\Nocks\Message\CompletePurchaseResponse', $response);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Response\CompletePurchaseResponse', $response);
 		$this->assertFalse($response->isSuccessful());
 		$this->assertFalse($response->isRedirect());
 		$this->assertNull($response->getTransactionReference());

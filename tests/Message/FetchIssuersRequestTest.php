@@ -3,6 +3,7 @@
 namespace Omnipay\Nocks\Message;
 
 
+use Omnipay\Nocks\Message\Request\FetchIssuersRequest;
 use Omnipay\Tests\TestCase;
 use Omnipay\Common\Issuer;
 
@@ -10,7 +11,7 @@ use Omnipay\Common\Issuer;
 class FetchIssuersRequestTest extends TestCase
 {
 	/**
-	 * @var \Omnipay\Nocks\Message\FetchIssuersRequest
+	 * @var FetchIssuersRequest
 	 */
 	protected $request;
 
@@ -31,7 +32,7 @@ class FetchIssuersRequestTest extends TestCase
 		$this->setMockHttpResponse('FetchIssuersSuccess.txt');
 		$response = $this->request->send();
 
-		$this->assertInstanceOf('Omnipay\Nocks\Message\FetchIssuersResponse', $response);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Response\FetchIssuersResponse', $response);
 		$this->assertTrue($response->isSuccessful());
 		$this->assertFalse($response->isRedirect());
 		$this->assertNull($response->getTransactionReference());
@@ -47,7 +48,7 @@ class FetchIssuersRequestTest extends TestCase
 		$this->setMockHttpResponse('FetchIssuersFailure.txt');
 		$response = $this->request->send();
 
-		$this->assertInstanceOf('Omnipay\Nocks\Message\FetchIssuersResponse', $response);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Response\FetchIssuersResponse', $response);
 		$this->assertFalse($response->isSuccessful());
 		$this->assertFalse($response->isRedirect());
 		$this->assertNull($response->getTransactionReference());

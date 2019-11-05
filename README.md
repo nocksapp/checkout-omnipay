@@ -3,22 +3,15 @@
 **Nocks driver for the Omnipay PHP payment processing library**
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements Nocks support for Omnipay.
+processing library for PHP. This package implements Nocks support for Omnipay 3.
 
 ## Installation
 
-The Nocks Omnipay driver is installed via [Composer](http://getcomposer.org/). To install, simply add it
-to your `composer.json` file:
+The Nocks Omnipay driver is installed via [Composer](http://getcomposer.org/). To install, require it:
 
-```json
-{
-    "require": {
-        "nocksapp/omnipay-nocks": "^1.3.0"
-    }
-}
 ```
-
-And run composer to update your dependencies.
+composer require nocksapp/omnipay-nocks
+```
 
 ## Basic Usage
 

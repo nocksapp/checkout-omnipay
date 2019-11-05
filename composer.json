@@ -19,10 +19,10 @@
         }
     ],
     "require": {
-        "omnipay/common": "^2.5"
+        "omnipay/common": "^3.0.1"
     },
     "require-dev": {
-        "omnipay/tests": "~2.0"
+        "omnipay/tests": "^3.1"
     },
     "autoload": {
         "psr-4": { "Omnipay\\Nocks\\" : "src/" }

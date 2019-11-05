@@ -1,13 +1,13 @@
 <?php
 
-namespace Omnipay\Nocks\Message;
+namespace Omnipay\Nocks\Message\Response;
 
 use Omnipay\Common\Issuer;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\FetchIssuersResponseInterface;
 
-class FetchIssuersResponse extends AbstractResponse implements FetchIssuersResponseInterface {
-
+class FetchIssuersResponse extends AbstractResponse implements FetchIssuersResponseInterface
+{
 	/**
 	 * Is the response successful?
 	 *

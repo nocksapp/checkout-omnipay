@@ -3,14 +3,13 @@
 namespace Omnipay\Nocks\Message;
 
 
+use Omnipay\Nocks\Message\Request\PurchaseRequest;
 use Omnipay\Tests\TestCase;
 
 class PurchaseRequestTest extends TestCase
 {
-
 	/**
-	 *
-	 * @var \Omnipay\Nocks\Message\PurchaseRequest
+	 * @var PurchaseRequest
 	 */
 	protected $request;
 
@@ -52,7 +51,7 @@ class PurchaseRequestTest extends TestCase
 		$this->setMockHttpResponse('TransactionOpen.txt');
 		$response = $this->request->send();
 
-		$this->assertInstanceOf('Omnipay\Nocks\Message\PurchaseResponse', $response);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Response\PurchaseResponse', $response);
 		$this->assertFalse($response->isSuccessful());
 		$this->assertTrue($response->isRedirect());
 		$this->assertSame('GET', $response->getRedirectMethod());
@@ -69,7 +68,7 @@ class PurchaseRequestTest extends TestCase
 		$this->setMockHttpResponse('TransactionFailure.txt');
 		$response = $this->request->send();
 
-		$this->assertInstanceOf('Omnipay\Nocks\Message\PurchaseResponse', $response);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Response\PurchaseResponse', $response);
 		$this->assertFalse($response->isSuccessful());
 		$this->assertFalse($response->isRedirect());
 		$this->assertNull($response->getTransactionReference());

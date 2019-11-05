@@ -8,7 +8,7 @@ use Omnipay\Tests\GatewayTestCase;
 class GatewayTest extends GatewayTestCase
 {
 	/**
-	 * @var \Omnipay\Nocks\Gateway
+	 * @var Gateway
 	 */
 	protected $gateway;
 
@@ -35,7 +35,7 @@ class GatewayTest extends GatewayTestCase
 			'locale' => 'nl_NL',
 		]);
 
-		$this->assertInstanceOf('Omnipay\Nocks\Message\PurchaseRequest', $request);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Request\PurchaseRequest', $request);
 		$this->assertSame('10.00', $request->getAmount());
 		$this->assertSame('123', $request->getMerchant());
 		$this->assertSame('EUR', $request->getCurrency());
@@ -53,7 +53,7 @@ class GatewayTest extends GatewayTestCase
 	{
 		$request = $this->gateway->completePurchase(['transactionId' => '1']);
 
-		$this->assertInstanceOf( 'Omnipay\Nocks\Message\CompletePurchaseRequest', $request);
+		$this->assertInstanceOf( 'Omnipay\Nocks\Message\Request\CompletePurchaseRequest', $request);
 		$this->assertSame('1', $request->getTransactionId());
 	}
 
@@ -61,7 +61,7 @@ class GatewayTest extends GatewayTestCase
 	{
 		$request = $this->gateway->fetchTransaction(['transactionId' => '1']);
 
-		$this->assertInstanceOf('Omnipay\Nocks\Message\FetchTransactionRequest', $request);
+		$this->assertInstanceOf('Omnipay\Nocks\Message\Request\FetchTransactionRequest', $request);
 
 		$data = $request->getData();
 
